@@ -10,3 +10,4 @@ node_modules
 # excluded
 excluded
 tmp.md
+example/package-lock.json
