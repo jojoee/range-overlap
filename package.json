@@ -1,7 +1,7 @@
 {
   "name": "range-overlap",
   "version": "0.0.1",
-  "description": "Range overlap",
+  "description": "Are 2 ranges overlapping",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -22,7 +22,15 @@
   },
   "keywords": [
     "range",
-    "overlap"
+    "ranges",
+    "overlap",
+    "overlapping",
+    "utility",
+    "utilities",
+    "interval",
+    "intersect",
+    "intersecting",
+    "date"
   ],
   "author": "Nathachai Thongniran <inid3a@gmail.com>",
   "license": "MIT",
