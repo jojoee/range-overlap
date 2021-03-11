@@ -40,9 +40,9 @@
   "homepage": "https://github.com/jojoee/range-overlap#readme",
   "devDependencies": {
     "@types/jest": "^22.2.3",
-    "jest": "^23.6.0",
+    "jest": "^26.6.3",
     "prettier": "^1.19.1",
-    "ts-jest": "^22.4.6",
+    "ts-jest": "^26.5.3",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.2.3"
