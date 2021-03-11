@@ -1,0 +1,6 @@
+{
+  "name": "range-overlap-example",
+  "dependencies": {
+    "range-overlap": "^0.0.1"
+  }
+}
