@@ -1,0 +1,12 @@
+# dependency
+node_modules
+
+# build
+/lib
+
+# test
+/coverage
+
+# excluded
+excluded
+tmp.js

@@ -1,0 +1,50 @@
+{
+  "name": "range-overlap",
+  "version": "0.0.1",
+  "description": "Range overlap",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jojoee/range-overlap.git"
+  },
+  "keywords": [
+    "range",
+    "overlap"
+  ],
+  "author": "Nathachai Thongniran <inid3a@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jojoee/range-overlap/issues"
+  },
+  "homepage": "https://github.com/jojoee/range-overlap#readme",
+  "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "codecov": "^3.1.0",
+    "jest": "^23.6.0",
+    "prettier": "^1.19.1",
+    "rollup": "^2.41.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "ts-jest": "^22.4.6",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.2.3"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
