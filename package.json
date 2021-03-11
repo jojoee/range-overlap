@@ -1,6 +1,6 @@
 {
   "name": "range-overlap",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Are 2 ranges overlapping",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
