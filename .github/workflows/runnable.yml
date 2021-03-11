@@ -28,7 +28,7 @@ jobs:
         npm install -g ts-node
 
     - name: Run with CommonJS
-      run: node commonjs.js
+      run: node common.js
 
     - name: Run with ES6
       run: ts-node es6.ts
