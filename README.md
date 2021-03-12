@@ -67,6 +67,28 @@ isRangeOverlap( // false
 isRangeOverlap({ start: 1, end: 10 }, { start: 10, end: 12 }, true) // false
 ```
 
+## Algorithm
+
+The detailed logic is described [here](https://stackoverflow.com/questions/325933/determine-whether-two-date-ranges-overlap), but in summary is explained below.
+```
+2 cases that will not overlapping
+case1) |----range1----|  |----range2----|
+       x1             x2 y1             y2
+
+case2) |----range2----|  |----range2----|
+       y1             y2 x1             x2
+
+so isNotOverlap
+= case1) or case2)
+= x2 < y1 || y2 < x1
+
+due to isOverlap
+= ~isNotOverlap
+= ~(x2 < y1 || y2 < x1)
+= x2 >= y1 && y2 >= x1
+= x1 <= y2 && y1 <= x2
+```
+
 ## TODO
 
 - [ ] [demo] make it work with vanilla javascript `index.html`
