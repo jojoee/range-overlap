@@ -23,31 +23,48 @@ import { isRangeOverlap } from "range-overlap"
 ## Example usage
 
 ```javascript
-// integer and floating numbers
+// integer and floating numbers as a param
 isRangeOverlap(1, 10, 2, 12) // true
 isRangeOverlap(1, 10, 2, 8) // true
 isRangeOverlap(100, 200, 201, 300) // false
 
-// Date
-isRangeOverlap(
+// Date as a param
+isRangeOverlap( // true
   new Date(1615452500000),
   new Date(1615452800000),
   new Date(1615452700000),
-  new Date(1615452900000)
+  new Date(1615452900000),
 )
 
-// array of numbers or Date(s)
-isRangeOverlap([1, 10], [2, 12])
-isRangeOverlap(
+// array of numbers or Date(s) as a param
+isRangeOverlap([1, 10], [2, 12]) // true
+isRangeOverlap( // true
   [new Date(1615452500000), new Date(1615452800000)],
   [new Date(1615452700000), new Date(1615452900000)]
 )
 
-// custom type
-isRangeOverlap(
+// custom type as a param
+isRangeOverlap( // true
   { start: 1, end: 10 },
   { start: 2, end: 12 }
 )
+
+// support is-exclusive param
+isRangeOverlap(1, 10, 10, 12, true) // false
+isRangeOverlap( // false
+  new Date(1615452500000),
+  new Date(1615452600000),
+  new Date(1615452600000),
+  new Date(1615452800000),
+  true
+)
+isRangeOverlap([1, 10], [10, 12], true) // false
+isRangeOverlap( // false
+  [new Date(1615452500000), new Date(1615452600000)],
+  [new Date(1615452600000), new Date(1615452800000)],
+  true
+)
+isRangeOverlap({ start: 1, end: 10 }, { start: 10, end: 12 }, true) // false
 ```
 
 ## TODO
