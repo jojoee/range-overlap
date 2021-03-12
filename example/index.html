@@ -4,16 +4,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Example of Range Overlap</title>
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.css">
+  <style>
+    #range1,
+    #range2 {
+      width: 100%
+    }
+
+    #result {
+      color: white;
+      padding: 0 4px;
+    }
+
+    #result.true {
+      background-color: #198754;
+    }
+
+    #result.true::after {
+      content: "true"
+    }
+
+    #result.false {
+      background-color: #dc3545;
+    }
+
+    #result.false::after {
+      content: "false"
+    }
+  </style>
 </head>
 
 <body>
-  Example of Range Overlap
+  <div class="container">
+    <div class="row">
+      <h2>Range Overlap</h2>
+      <hr>
 
-  <script src="https://unpkg.com/range-overlap/lib/index.js"></script>
+      <div id="range1"></div>
+      <br />
+      <div id="range2"></div>
+      <br />
+
+      <div>
+        <span>isRangeOverlap</span>
+        <span id="result"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
+
+  <script>var exports = {};</script>
+  <script src="../lib/index.js"></script>
+
+  <style>
+
+  </style>
   <script>
-    console.log(isRangeOverlap(1, 10, 2, 12))
-    console.log(isRangeOverlap(100, 200, 201, 300))
+    // const
+    let x1, x2, y1, y2
+    const range1 = document.getElementById('range1')
+    const range2 = document.getElementById('range2')
+    const result = document.getElementById('result')
+
+    // setup input range
+    noUiSlider.create(range1, {
+      range: { 'min': -100, 'max': 100 },
+      step: 0.1,
+      start: [-50, 10],
+      connect: true,
+      tooltips: true,
+    })
+    noUiSlider.create(range2, {
+      range: { 'min': -100, 'max': 100 },
+      step: 0.1,
+      start: [-10, 50],
+      connect: true,
+      tooltips: true,
+    })
+
+    // on change
+    range1.noUiSlider.on('update', function (values, handle) {
+      x1 = parseFloat(values[0]) || 0
+      x2 = parseFloat(values[1]) || 0
+      reCalculate()
+    })
+    range2.noUiSlider.on('update', function (values, handle) {
+      y1 = parseFloat(values[0]) || 0
+      y2 = parseFloat(values[1]) || 0
+      reCalculate()
+    })
+
+    function reCalculate() {
+      const isOverlap = isRangeOverlap(x1, x2, y1, y2)
+      if (isOverlap) {
+        result.className = 'true'
+      } else {
+        result.className = 'false'
+      }
+    }
   </script>
 </body>
 
