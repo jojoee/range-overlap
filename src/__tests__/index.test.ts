@@ -2,28 +2,25 @@ import { isRangeOverlap } from '../index'
 
 describe('isRangeOverlap, number', () => {
   it('is overlapping', () => {
+    // overlap
     expect(isRangeOverlap(1, 10, 2, 12)).toBeTruthy()
-  })
 
-  it('is subset of each other', () => {
+    // subset of each other
     expect(isRangeOverlap(1, 10, 2, 8)).toBeTruthy()
-  })
 
-  it('is overlapping at boundary', () => {
-    expect(isRangeOverlap(1, 10, 10, 12)).toBeTruthy()
-  })
-
-  it('is overlapping with floating number', () => {
+    // floating number
     expect(isRangeOverlap(1, 10.98, 10.98, 12)).toBeTruthy()
   })
 
   it('is not overlapping', () => {
+    // not overlap
     expect(isRangeOverlap(100, 200, 201, 300)).toBeFalsy()
   })
 })
 
 describe('isRangeOverlap, Date', () => {
   it('is overlapping', () => {
+    // overlap
     expect(
       isRangeOverlap(
         new Date(1615452500000),
@@ -32,9 +29,8 @@ describe('isRangeOverlap, Date', () => {
         new Date(1615452900000),
       ),
     ).toBeTruthy()
-  })
 
-  it('is subset of each other', () => {
+    // subset of each other
     expect(
       isRangeOverlap(
         new Date(1615452500000),
@@ -45,18 +41,8 @@ describe('isRangeOverlap, Date', () => {
     ).toBeTruthy()
   })
 
-  it('is overlapping at boundary', () => {
-    expect(
-      isRangeOverlap(
-        new Date(1615452500000),
-        new Date(1615452800000),
-        new Date(1615452800000),
-        new Date(1615452900000),
-      ),
-    ).toBeTruthy()
-  })
-
   it('is not overlapping', () => {
+    // not overlap
     expect(
       isRangeOverlap(
         new Date(1615452500000),
@@ -69,18 +55,13 @@ describe('isRangeOverlap, Date', () => {
 })
 describe('isRangeOverlap, array of number(s)', () => {
   it('is overlapping', () => {
+    // overlap
     expect(isRangeOverlap([1, 10], [2, 12])).toBeTruthy()
-  })
 
-  it('is subset of each other', () => {
+    // subset of each other
     expect(isRangeOverlap([1, 10], [2, 8])).toBeTruthy()
-  })
 
-  it('is overlapping at boundary', () => {
-    expect(isRangeOverlap([1, 10], [10, 12])).toBeTruthy()
-  })
-
-  it('is overlapping with floating number', () => {
+    // floating number
     expect(isRangeOverlap([1, 10.98], [10.98, 12])).toBeTruthy()
   })
 
@@ -91,15 +72,15 @@ describe('isRangeOverlap, array of number(s)', () => {
 
 describe('isRangeOverlap, array of Dates', () => {
   it('is overlapping', () => {
+    // overlap
     expect(
       isRangeOverlap(
         [new Date(1615452500000), new Date(1615452800000)],
         [new Date(1615452700000), new Date(1615452900000)],
       ),
     ).toBeTruthy()
-  })
 
-  it('is subset of each other', () => {
+    // subset of each other
     expect(
       isRangeOverlap(
         [new Date(1615452500000), new Date(1615452800000)],
@@ -108,16 +89,8 @@ describe('isRangeOverlap, array of Dates', () => {
     ).toBeTruthy()
   })
 
-  it('is overlapping at boundary', () => {
-    expect(
-      isRangeOverlap(
-        [new Date(1615452500000), new Date(1615452800000)],
-        [new Date(1615452800000), new Date(1615452900000)],
-      ),
-    ).toBeTruthy()
-  })
-
   it('is not overlapping', () => {
+    // not overlap
     expect(
       isRangeOverlap(
         [new Date(1615452500000), new Date(1615452700000)],
@@ -129,22 +102,18 @@ describe('isRangeOverlap, array of Dates', () => {
 
 describe('isRangeOverlap, "range" type', () => {
   it('is overlapping', () => {
+    // overlap
     expect(isRangeOverlap({ start: 1, end: 10 }, { start: 2, end: 12 })).toBeTruthy()
-  })
 
-  it('is subset of each other', () => {
+    // subset of each other
     expect(isRangeOverlap({ start: 1, end: 10 }, { start: 2, end: 8 })).toBeTruthy()
-  })
 
-  it('is overlapping at boundary', () => {
-    expect(isRangeOverlap({ start: 1, end: 10 }, { start: 10, end: 12 })).toBeTruthy()
-  })
-
-  it('is overlapping with floating number', () => {
+    // floating number
     expect(isRangeOverlap({ start: 1, end: 10.98 }, { start: 10.98, end: 12 })).toBeTruthy()
   })
 
   it('is not overlapping', () => {
+    // not overlap
     expect(isRangeOverlap({ start: 100, end: 200 }, { start: 201, end: 300 })).toBeFalsy()
   })
 })
