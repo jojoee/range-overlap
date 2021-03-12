@@ -6,7 +6,7 @@
 ![continuous integration](https://github.com/jojoee/range-overlap/workflows/continuous%20integration/badge.svg?branch=main)
 ![runnable](https://github.com/jojoee/range-overlap/workflows/runnable/badge.svg?branch=main)
 
-Are 2 ranges overlap ?, [Demo page](https://jojoee.github.io/range-overlap/example/)
+Are 2 ranges overlap ?, [demo page](https://jojoee.github.io/range-overlap/example/).
 
 [![Demo image](./example/range-overlap-demo.png)](https://jojoee.github.io/range-overlap/example/)
 
