@@ -2,9 +2,13 @@
 
 [![Version - npm](https://img.shields.io/npm/v/range-overlap.svg)](https://www.npmjs.com/package/range-overlap)
 [![License - npm](https://img.shields.io/npm/l/range-overlap.svg)](http://opensource.org/licenses/MIT)
-
 ![continuous integration](https://github.com/jojoee/range-overlap/workflows/continuous%20integration/badge.svg?branch=main)
 ![runnable](https://github.com/jojoee/range-overlap/workflows/runnable/badge.svg?branch=main)
+![release](https://github.com/jojoee/range-overlap/workflows/release/badge.svg?branch=main)
+[![Codecov](https://img.shields.io/codecov/c/github/jojoee/range-overlap.svg)](https://codecov.io/github/jojoee/range-overlap)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
+[![Greenkeeper badge](https://badges.greenkeeper.io/jojoee/range-overlap.svg)](https://greenkeeper.io/)
+[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fjojoee%2Frange-overlap%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/jojoee/range-overlap/main)
 
 Are 2 ranges overlap ?, [demo page](https://jojoee.github.io/range-overlap/example/).
 
