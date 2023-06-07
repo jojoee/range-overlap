@@ -40,6 +40,9 @@
   },
   "homepage": "https://github.com/jojoee/range-overlap#readme",
   "devDependencies": {
+    "@stryker-mutator/core": "^7.0.1",
+    "@stryker-mutator/jest-runner": "^7.0.1",
+    "@stryker-mutator/typescript-checker": "^7.0.1",
     "@types/jest": "^22.2.3",
     "jest": "^26.6.3",
     "prettier": "^1.19.1",

@@ -4,6 +4,7 @@
   },
   "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
   "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+  "modulePathIgnorePatterns": [".stryker-tmp"],
   "coverageDirectory": "./coverage/",
   "collectCoverage": true
 }

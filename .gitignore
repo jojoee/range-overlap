@@ -11,3 +11,7 @@ node_modules
 excluded
 tmp.md
 example/package-lock.json
+
+# stryker temp files
+.stryker-tmp
+reports
