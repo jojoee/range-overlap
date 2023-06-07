@@ -77,7 +77,7 @@ The detailed logic is described [here](https://stackoverflow.com/questions/32593
 case1) |----range1----|  |----range2----|
        x1             x2 y1             y2
 
-case2) |----range2----|  |----range2----|
+case2) |----range2----|  |----range1----|
        y1             y2 x1             x2
 
 so isNotOverlap
