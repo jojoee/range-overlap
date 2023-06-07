@@ -95,10 +95,6 @@ due to isOverlap
 = x1 <= y2 && y1 <= x2
 ```
 
-## TODO
-
-- [ ] [stryker-mutator] config `stryker.conf.json` file
-
 ## CMD
 
 ```bash
