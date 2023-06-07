@@ -7,6 +7,7 @@
   "scripts": {
     "test": "jest src --config jestconfig.json",
     "test:watch": "jest src --config jestconfig.json --watch",
+    "coverage.check": "jest src --config jestconfig.json --coverage",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
