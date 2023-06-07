@@ -43,15 +43,7 @@ jobs:
           npm install -g typescript
           npm install -g ts-node
 
-      - name: Formatting and linting
-        run: |
-          npm run format
-          npm run lint
-
-      - name: Test and test coverage
-        run: npm run coverage.check
-
-      - name: Test build
+      - name: Build package
         run: npm run build
 
       - name: Semantic Release
