@@ -3,8 +3,23 @@
     "^.+\\.(t|j)sx?$": "ts-jest"
   },
   "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
-  "modulePathIgnorePatterns": [".stryker-tmp"],
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js",
+    "jsx",
+    "json",
+    "node"
+  ],
   "coverageDirectory": "./coverage/",
-  "collectCoverage": true
+  "reporters": [
+    "default"
+  ],
+  "coverageReporters": [
+    "text",
+    "text-summary"
+  ],
+  "collectCoverage": true,
+  "verbose": true,
+  "preset": "ts-jest"
 }

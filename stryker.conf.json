@@ -3,12 +3,38 @@
   "_comment": "This config was generated using 'stryker init'. Please take a look at: https://stryker-mutator.io/docs/stryker-js/configuration/ for more information.",
   "packageManager": "npm",
   "reporters": [
+    "json",
     "html",
     "clear-text",
     "progress",
     "dashboard"
   ],
+  "checkers": [
+    "typescript"
+  ],
+  "tsconfigFile": "tsconfig.json",
   "testRunner": "jest",
+  "tempDirName": ".stryker-tmp",
   "testRunner_comment": "Take a look at https://stryker-mutator.io/docs/stryker-js/jest-runner for information about the jest plugin.",
+  "jest": {
+    "projectType": "custom",
+    "configFile": "jestconfig.json",
+    "enableFindRelatedTests": false
+  },
+  "thresholds": {
+    "high": 80,
+    "low": 70,
+    "break": 75
+  },
+  "mutate": [
+    "src/index.ts"
+  ],
+  "disableTypeChecks": "src/**/*.{js,ts,jsx,tsx,html,vue}",
+  "dashboard": {
+    "project": "github.com/jojoee/range-overlap",
+    "version": "main",
+    "baseUrl": "https://dashboard.stryker-mutator.io/api/reports",
+    "reportType": "full"
+  },
   "coverageAnalysis": "perTest"
 }
