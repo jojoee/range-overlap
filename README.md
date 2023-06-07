@@ -98,8 +98,10 @@ due to isOverlap
 ## CMD
 
 ```bash
+npm run format && npm run lint && npm run coverage.check && npm run build
+npx stryker run
+npm run version
+
 npm publish --dry-run
 npm publish
-npm run format && npm run lint && npm run test && npm run build
-npm run version
 ```
