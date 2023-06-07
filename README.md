@@ -97,11 +97,7 @@ due to isOverlap
 
 ## TODO
 
-- [ ] [demo] make it work with vanilla javascript `index.html`
-- [ ] [demo] add demo page
-- [ ] [CI] auto release with [semantic-release](https://github.com/semantic-release/semantic-release)
-- [ ] [CI] run test coverage
-- [ ] [CI] upload test coverage to "test report service" e.g. Codecov
+- [ ] [stryker-mutator] config `stryker.conf.json` file
 
 ## CMD
 
@@ -111,4 +107,3 @@ npm publish
 npm run format && npm run lint && npm run test && npm run build
 npm run version
 ```
-
