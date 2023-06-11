@@ -54,7 +54,13 @@
       <br />
 
       <div>
-        <span>isRangeOverlap</span>
+        <span>isExclusive</span>
+        <input type="checkbox" id="isexclusive">
+      </div>
+      <hr>
+
+      <div>
+        <span>isRangeOverlap: </span>
         <span id="result"></span>
       </div>
     </div>
@@ -71,10 +77,11 @@
   </style>
   <script>
     // const
-    let x1, x2, y1, y2
-    const range1 = document.getElementById('range1')
-    const range2 = document.getElementById('range2')
-    const result = document.getElementById('result')
+    let x1, x2, y1, y2, isExclusive = false
+    const range1Ele = document.getElementById('range1')
+    const range2Ele = document.getElementById('range2')
+    const isExclusiveEle = document.getElementById('isexclusive')
+    const resultEle = document.getElementById('result')
 
     // setup input range
     noUiSlider.create(range1, {
@@ -93,24 +100,27 @@
     })
 
     // on change
-    range1.noUiSlider.on('update', function (values, handle) {
+    range1Ele.noUiSlider.on('update', function (values, handle) {
       x1 = parseFloat(values[0]) || 0
       x2 = parseFloat(values[1]) || 0
       reCalculate()
     })
-    range2.noUiSlider.on('update', function (values, handle) {
+    range2Ele.noUiSlider.on('update', function (values, handle) {
       y1 = parseFloat(values[0]) || 0
       y2 = parseFloat(values[1]) || 0
       reCalculate()
     })
 
+    isExclusiveEle.addEventListener('change', (event) => {
+      isExclusive = event.currentTarget.checked
+      reCalculate()
+    })
+
     function reCalculate() {
-      const isOverlap = isRangeOverlap(x1, x2, y1, y2)
-      if (isOverlap) {
-        result.className = 'true'
-      } else {
-        result.className = 'false'
-      }
+      const isOverlap = isRangeOverlap(x1, x2, y1, y2, isExclusive)
+      const className = isOverlap.toString()
+
+      result.className = className
     }
   </script>
 </body>
